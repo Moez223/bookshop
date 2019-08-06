@@ -1,0 +1,19 @@
+.card {
+    border-radius: 0px;
+}
+
+.cart-area {
+    float: right;
+    background: #007bff;
+    padding: 18px;
+    border-radius: 35px;
+}
+
+.cart-area a {
+    color: #FFF;
+}
+
+.btn-cart {
+    border-radius: 0px;
+    margin-bottom: 10px;
+}

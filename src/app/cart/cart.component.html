@@ -1,0 +1,40 @@
+<div class="cart-page">
+    <div class="container">
+        <h2>Liste des achats:</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Quantité</th>
+                    <th scope="col">Prix (par unité)</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let lem of items | keyvalue">
+                    <td>{{getBook(lem.key).title}}</td>
+                    <td>{{lem.value}}</td>
+                    <td>{{getBook(lem.key).price}} €</td>
+                    <td>{{getBook(lem.key).price*lem.value}} €</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Total</th>
+                    <th scope="col">valeur</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let offer of offers">
+                    <td>{{offer.type}}</td>
+                    <td>{{offer.value}} €</td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 class="text-center"><span class="badge badge-primary">Totale avant promotion : {{totalWithoutOffers}} €</span>
+        </h1>
+        <h1 class="text-center"><span class="badge badge-success">Totale aprés promotion : {{totalWithOffers}} €</span></h1>
+    </div>
+</div>

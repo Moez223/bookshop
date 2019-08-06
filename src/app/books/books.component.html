@@ -1,0 +1,22 @@
+<div class="books-page">
+    <div class="container">
+        <h2>Listes des livres : </h2>
+        <div class="cart-area">
+            <a href="/cart" id="cart"><i class="fa fa-shopping-cart"></i> Cart <span
+                    class="badge">{{cart.length}}</span></a>
+        </div>
+        <div class="row mb-3">
+          <input type="search" class="form-control col-md-4" [(ngModel)]="searchBook" placeholder="Rechercher ...">
+        </div>
+        <div class="row">
+            <div class="card" style=" width:300px; float: left; height: auto; margin-right: 15px; margin-bottom: 10px; " *ngFor="let book of books | filter: searchBook">
+                <img class="card-img-top img-responsive" [src]="book.cover">
+                <div class="card-body">
+                    <h5 class="card-title">{{book.title}}</h5>
+                    <button class="btn btn-primary btn-cart" (click)="addInCart(book)">Ajouter au panier</button>
+                    <p class="card-text">{{book.synopsis[0]}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
